@@ -5,8 +5,6 @@ def setup():
     driver = webdriver.Chrome(options = webdriver.ChromeOptions())
     return driver
 
-
-
 # import pytest
 # from selenium import webdriver
 # from selenium.webdriver.chrome.service import Service
