@@ -4,12 +4,12 @@ from selenium.webdriver.common.by import By
 
 class LoginPage:
     button_hello_ID="nav-link-accountList-nav-line-1"
-    textbox_username_xpath="//input[@id='ap_email_login']"
-    button_continue_xpath="//input[@type='submit']"
+    textbox_username_xpath="//input[@id='ap_email']"
+    button_continue_xpath="//input[@id='continue']"
     textbox_password_ID="ap_password"
     button_login_ID="signInSubmit"
-    dropdown_All_xpath = "//a[@id='nav-hamburger-menu']"
-    button_logout_xpath = "//ul[@class='hmenu hmenu-visible']//a[@class='hmenu-item'][normalize-space()='Sign Out']"
+    dropdown_All_xpath = "//i[@class='hm-icon nav-sprite']"
+    button_logout_xpath = "//a[contains(text(),'Sign Out')]"
 
     def __init__(self,driver):
         self.driver= driver
@@ -25,11 +25,11 @@ class LoginPage:
         self.driver.find_element(By.XPATH, self.button_continue_xpath).click()
 
     def setPassword(self,Password):
-        self.driver.find_element(By.ID, self.textbox_password_ID).clear()
-        self.driver.find_element(By.ID, self.textbox_password_ID).send_keys(Password)
+        self.driver.find_element(By.XPATH, self.textbox_password_ID).clear()
+        self.driver.find_element(By.XPATH, self.textbox_password_ID).send_keys(Password)
 
     def clickLogin(self):
-        self.driver.find_element(By.ID, self.button_login_ID).click()
+        self.driver.find_element(By.XPATH, self.button_login_ID).click()
 
     def clickAlldropdown(self):
         self.driver.find_element(By.XPATH, self.dropdown_All_xpath).click()
