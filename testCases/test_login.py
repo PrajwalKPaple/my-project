@@ -22,7 +22,7 @@ class Test_001_Login:
         self.driver = setup()
         self.driver.get(self.baseUrl)
         act_title = self.driver.title
-        if act_title == "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in":
+        if act_title == "1Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in":
             assert True
             self.driver.close()
             self.logger.info("********************* HOMEPAGE TITLE TEST PASSED ************************")
@@ -34,7 +34,7 @@ class Test_001_Login:
 
 
     def test_login(self):
-        self.logger.info("********************* TEST 002 STARTED ************************")
+        self.logger.info("********************* TEST 002 STARTED **************************")
         self.driver = setup()
         self.driver.get(self.baseUrl)
         self.lp=LoginPage(self.driver)
