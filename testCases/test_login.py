@@ -10,7 +10,7 @@ import time
 from selenium.webdriver.support import expected_conditions as EC
 from utilities.customLogger import LogGen
 
-// This is for oonly testing purpose
+
 
 # // this is my code
 class Test_001_Login:
@@ -20,9 +20,6 @@ class Test_001_Login:
 
     logger = LogGen.loggen()
 
-    def wait_for_element(self, by, value, timeout=10):
-        """Reusable method for explicit wait."""
-        return WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located((by, value)))
 
     def test_homepageTitle(self):
         self.logger.info("********************* TEST 001 STARTED ************************")

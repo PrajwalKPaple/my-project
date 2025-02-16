@@ -20,7 +20,7 @@ class Test_002_DDT_Login:
     def test_login(self):
         self.driver = setup()
         self.driver.get(self.baseUrl)
-        self.lp=LoginPage(self.driver)
+        self.lp=LoginPage(self.driver,)
         self.lp.clickHello()
         self.rows = XLutils.getRowCount(self.path,"Sheet1")
         print("Number of rows in the excel:",self.rows)
@@ -31,13 +31,10 @@ class Test_002_DDT_Login:
             self.user = XLutils.readData(self.path,"Sheet1",r,1)
             self.password = XLutils.readData(self.path, "Sheet1", r, 2)
             self.exp = XLutils.readData(self.path, "Sheet1", r, 3)
-            time.sleep(5)
             self.lp.setUsername(self.user)
             self.lp.clickContinue()
-            time.sleep(3)
             self.lp.setPassword(self.password)
             self.lp.clickLogin()
-            time.sleep(5)
 
             act_title = self.driver.title
             exp_title = "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in"

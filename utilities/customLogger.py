@@ -10,7 +10,7 @@ class LogGen:
         # Ensure the logs directory exists
         if not os.path.exists(log_folder):
             os.makedirs(log_folder)
-        logging.basicConfig(filename=".\\logs\\automation.log",
+        logging.basicConfig(filename='.\\logs\\automation.log',
                         format='%(asctime)s: %(levelname)s: %(message)s', datefmt = '%m/%d/%Y %I:%M:%S %p'
                         )
         logger = logging.getLogger()

@@ -1,5 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver import chrome
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class LoginPage:
@@ -8,19 +10,23 @@ class LoginPage:
     button_continue_xpath="//input[@id='continue']"
     textbox_password_xpath="//*[@id='ap_password']"
     button_login_xpath="//*[@id='signInSubmit']"
-    dropdown_All_xpath = "//i[@class='hm-icon nav-sprite']"
-    button_logout_xpath = "//a[contains(text(),'Sign Out')]"
+    dropdown_All_xpath = "nav-hamburger-menu"
+    button_logout_xpath = '//*[@id="hmenu-content"]/ul[1]/li[31]/a'
     serach_box_xpath = "//input[@id='twotabsearchtextbox']"
     search_button_xpath = "//input[@id='nav-search-submit-button']"
 
+
+
     def __init__(self,driver):
         self.driver= driver
+
 
     def clickHello(self):
         self.driver.find_element(By.ID, self.button_hello_ID).click()
 
     def  setUsername(self,username):
-        # self.driver.find_element(By.XPATH, self.textbox_username_xpath).clear()
+
+        self.driver.find_element(By.XPATH, self.textbox_username_xpath).clear()
         self.driver.find_element(By.XPATH, self.textbox_username_xpath).send_keys(username)
 
     def clickContinue(self):
@@ -34,7 +40,7 @@ class LoginPage:
         self.driver.find_element(By.XPATH, self.button_login_xpath).click()
 
     def clickAlldropdown(self):
-        self.driver.find_element(By.XPATH, self.dropdown_All_xpath).click()
+        self.driver.find_element(By.ID, self.dropdown_All_xpath).click()
 
     def clickSignout(self):
         self.driver.find_element(By.XPATH, self.button_logout_xpath)
