@@ -47,6 +47,5 @@ class Test_002_Cart:
             assert False
 
 
-        pass
 
 

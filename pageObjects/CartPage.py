@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 class CartPage:
     search_box_ID = "twotabsearchtextbox"
     add_to_cart_shoe_ID = "a-autoid-1-announce"
-    confirmation_add_to_cart_xpath = '/html/body/div[5]/div/div/div/div/div/div/div/div/div[3]/div/div[1]/div/div/div[2]/span/div/span/span/button'
+    confirmation_add_to_cart_xpath= "//button[contains(text(), 'Add to cart')]"
     search_button_ID = "nav-search-submit-button"
 
 
@@ -29,5 +29,5 @@ class CartPage:
 
 
     def clickconfirmation(self):
-        self.driver.find_element(By.XPATH, self.confirmation_add_to_cart_xpath)
+        self.driver.find_element(By.XPATH, self.confirmation_add_to_cart_xpath).click()
 
