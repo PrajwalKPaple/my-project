@@ -72,7 +72,7 @@ class Test_001_Login:
         self.lp.clickAlldropdown()
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         self.lp.clickSignout()
-        act_title = self.driver.find_element(By.XPATH,"//h1[@class='a-size-medium-plus a-spacing-small']").text
+        act_title = self.lp.capturelogoutpagetitle().text
         self.driver.quit()
         if act_title =="Sign in or create account":
             self.logger.info("********************* LOGOUT TEST PASSED ************************")
