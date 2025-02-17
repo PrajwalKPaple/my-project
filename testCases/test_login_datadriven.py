@@ -16,9 +16,11 @@ class Test_002_DDT_Login:
     baseUrl = ReadConfig.getApplicationURL()
     path = ".//testData/Test Credientials.xlsx"
 
+    logger = LogGen.loggen()
 
     def test_login(self):
         self.driver = setup()
+        self.logger.info("****************************** TEST 004 STARTED********************************")
         self.driver.get(self.baseUrl)
         self.lp=LoginPage(self.driver,)
         self.lp.clickHello()
@@ -57,9 +59,11 @@ class Test_002_DDT_Login:
 
         if "FAIL" not in list_status:
             print("Test Passed")
+            self.logger.info("****************************** TEST PASSED********************************")
             assert True
         else:
             self.driver.close()
+            self.logger.info("****************************** TEST FAILED********************************")
             assert False
 
 

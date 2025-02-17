@@ -70,6 +70,7 @@ class Test_001_Login:
         self.lp.setPassword(self.password)
         self.lp.clickLogin()
         self.lp.clickAlldropdown()
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         self.lp.clickSignout()
         act_title = self.driver.find_element(By.XPATH,"//h1[@class='a-size-medium-plus a-spacing-small']").text
         self.driver.quit()
@@ -77,7 +78,7 @@ class Test_001_Login:
             self.logger.info("********************* LOGOUT TEST PASSED ************************")
             assert True
         else:
-
+            self.driver.save_screenshot(".\\screenshots\\" + "test_logout.png")
             self.logger.info("********************* LOGOUT TEST FAILED ************************")
             assert False
 

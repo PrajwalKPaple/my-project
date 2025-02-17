@@ -10,8 +10,8 @@ class LoginPage:
     button_continue_xpath="//input[@id='continue']"
     textbox_password_xpath="//*[@id='ap_password']"
     button_login_xpath="//*[@id='signInSubmit']"
-    dropdown_All_xpath = "nav-hamburger-menu"
-    button_logout_xpath = '//*[@id="hmenu-content"]/ul[1]/li[31]/a'
+    dropdown_All_ID = "nav-hamburger-menu"
+    button_logout_xpath = "//a[contains(text(),'Sign Out')]"
     serach_box_xpath = "//input[@id='twotabsearchtextbox']"
     search_button_xpath = "//input[@id='nav-search-submit-button']"
 
@@ -40,10 +40,10 @@ class LoginPage:
         self.driver.find_element(By.XPATH, self.button_login_xpath).click()
 
     def clickAlldropdown(self):
-        self.driver.find_element(By.ID, self.dropdown_All_xpath).click()
+        self.driver.find_element(By.ID, self.dropdown_All_ID).click()
 
     def clickSignout(self):
-        self.driver.find_element(By.XPATH, self.button_logout_xpath)
+        self.driver.find_element(By.XPATH, self.button_logout_xpath).click()
     def clickSearchBox(self):
         self.driver.find_element(By.XPATH, self.serach_box_xpath)
     def clickSearch(self):
