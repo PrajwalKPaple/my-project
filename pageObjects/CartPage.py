@@ -27,9 +27,9 @@ class CartPage:
     def clickconfirmationaddtocart(self):
         self.driver.find_element(By.XPATH, self.confirmation_add_to_cart_xpath).click()
 
-
     def clickconfirmation(self):
         self.driver.find_element(By.XPATH, self.confirmation_add_to_cart_xpath).click()
 
     def clicksearchinput1(self):
         self.driver.find_element(By.ID, self.search_box_ID).send_keys("BOTTLE")
+

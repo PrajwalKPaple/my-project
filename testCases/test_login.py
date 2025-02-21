@@ -11,15 +11,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from utilities.customLogger import LogGen
 
 
-
-# // this is my code
 class Test_001_Login:
     baseUrl = ReadConfig.getApplicationURL()
     username = ReadConfig.getUseremail()
     password = ReadConfig.getPassword()
 
     logger = LogGen.loggen()
-
 
     def test_homepageTitle(self):
         self.logger.info("********************* TEST 001 STARTED ************************")

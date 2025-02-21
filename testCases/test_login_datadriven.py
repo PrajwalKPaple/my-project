@@ -27,7 +27,7 @@ class Test_002_DDT_Login:
         self.rows = XLutils.getRowCount(self.path,"Sheet1")
         print("Number of rows in the excel:",self.rows)
 
-        list_status=[]
+        list_status = []
 
         for r in range(2, self.rows+1):
             self.user = XLutils.readData(self.path,"Sheet1",r,1)

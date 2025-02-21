@@ -11,10 +11,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from utilities.customLogger import LogGen
 from pageObjects.CartPage import CartPage
 
-
-
-
-# // this is my code
 class Test_002_Cart:
     baseUrl = ReadConfig.getApplicationURL()
     username = ReadConfig.getUseremail()
@@ -41,7 +37,7 @@ class Test_002_Cart:
         alert = self.driver.switch_to.alert
         alert_message = alert.text
         print(alert_message)
-        if alert_message == "Item Added":
+        if alert_message == "Item Added!":
             self.logger.info("********************* TEST PASSED ************************")
             assert True
         else:
