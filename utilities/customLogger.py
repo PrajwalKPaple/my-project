@@ -7,7 +7,7 @@ class LogGen:
         log_folder = "logs"
         log_file = os.path.join(log_folder, "automation.log")
 
-        # Ensure the logs directory exists
+        # to check the logs directory exists
         if not os.path.exists(log_folder):
             os.makedirs(log_folder)
         logging.basicConfig(filename='.\\logs\\automation.log',
